@@ -1,5 +1,5 @@
 import { todas_las_cartas } from "./data.js";
-//Cargar cad elemento en consola
+//Cargar cada elemento en consola
 
 function item (contenido){
     let div = document.createElement('div');

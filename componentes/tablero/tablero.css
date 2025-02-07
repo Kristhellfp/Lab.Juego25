@@ -10,8 +10,8 @@
 .div-Table {
     
     gap: 1rem;
-    background-color: rgb(111, 102, 192);
     display: grid;
+    margin-top: 120px;
     grid-template-columns: repeat(7, 7rem);
     grid-template-rows: repeat(3, 6.1rem);
     justify-content: center;
@@ -19,7 +19,7 @@
 }
 
 .carta {
-    background-color: antiquewhite;
+    background-color: rgb(211, 189, 195);
     font-size: 3rem;
     height: 90px;
     width: 90px;
