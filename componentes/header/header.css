@@ -1,3 +1,44 @@
-.div-header {
-    background-color: aqua;
+.header {
+    background: #b9a5a5;
+    color: rgb(238, 231, 231);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+
+
+.contenedor-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+
+.animal-header {
+    width: 40px;
+    height: 40px;
+}
+
+
+.nav-header {
+    display: flex;
+    gap: 10px; 
+}
+
+
+.btn-fase {
+    background: #a493a4;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-nivel:hover {
+    background: #e68900;
 }
