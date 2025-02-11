@@ -24,6 +24,8 @@ function cargarCartas(){
 
     return div;
 
+
+
   
 }
 

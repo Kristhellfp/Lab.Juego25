@@ -1,7 +1,8 @@
 import { cargarCartas } from "./componentes/tablero/tablero.js";
 import { crearHeader } from "./componentes/header/header.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+
+
     let DOM = document.querySelector("#root");
 
     let contenedor = document.createElement("div");
@@ -26,4 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
     contenedor.appendChild(divfooter);
 
     DOM.appendChild(contenedor);
+
+
+
+    let todas_las_cartas = document.querySelectorAll('.carta');
+    todas_las_cartas.forEach(cargarCartas =>{
+     cargarCartas.addEventListener("click",()=>{
+         cargarCartas.classList.add("marcado");
+
+
+    });
 });
