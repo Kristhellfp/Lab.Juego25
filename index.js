@@ -30,10 +30,10 @@ import { crearHeader } from "./componentes/header/header.js";
 
 
 
-   let todas_las_cartas = document.querySelectorAll('.carta');
-   todas_las_cartas.forEach(cargarCartas =>{
-    cargarCartas.addEventListener("click",()=>{
-        cargarCartas.classList.add("marcado");
+    let todas_las_cartas = document.querySelectorAll('.carta');
+    todas_las_cartas.forEach(cargarCartas =>{
+     cargarCartas.addEventListener("click",()=>{
+         cargarCartas.classList.add("marcado");
 
 
     });
