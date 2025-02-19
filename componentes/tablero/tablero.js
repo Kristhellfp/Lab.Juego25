@@ -1,56 +1,22 @@
-import { todas_las_cartas } from "./data.js";
+import { todaslasCartas } from "./data.js";
+import { mezclarCartas, mostrarCartas } from "./funcionesCartas.js";
+import { multiplesCartas } from "./itemCarta.js";
 
-let cartasVolteadas = [];
-let cartasFijas = [];
+function cargarTablero() {
+    let divTablero = document.createElement("div");
+    divTablero.className = "divtablero"; 
 
-function crearCarta(contenido, index) {
-    let div = document.createElement('div');
-    div.textContent = "?"; 
-    div.className = "carta";
-    div.dataset.index = index;
-    div.dataset.valor = contenido;
+    let divTable = document.createElement("div");
+    divTable.className = "div-Table"; 
 
-    div.addEventListener("click", () => voltearCarta(div));
+    let cartasMezcladas = mostrarCartas(); 
+    let cartasFinales = mezclarCartas(cartasMezcladas); 
+    let cartasElementos = multiplesCartas(cartasFinales);
+    divTable.appendChild(cartasElementos); 
 
-    return div;
+    divTablero.appendChild(divTable); 
+
+    return divTablero;
 }
 
-function voltearCarta(carta) {
-    if (cartasFijas.includes(carta) || cartasVolteadas.length === 2) return;
-
-    carta.textContent = carta.dataset.valor;
-    carta.classList.add("marcado");
-    cartasVolteadas.push(carta);
-
-    if (cartasVolteadas.length === 2) {
-        setTimeout(verificarCartas, 500);
-    }
-}
-
-function verificarCartas() {
-    const [carta1, carta2] = cartasVolteadas;
-
-    if (carta1.dataset.valor === carta2.dataset.valor) {
-        cartasFijas.push(carta1, carta2);
-    } else {
-        carta1.textContent = "?";
-        carta2.textContent = "?";
-        carta1.classList.remove("marcado");
-        carta2.classList.remove("marcado");
-    }
-
-    cartasVolteadas = [];
-}
-
-function cargarCartas() {
-    let div = document.createElement('div');
-    div.className = "div-Table";
-
-    todas_las_cartas.forEach((letra, index) => {
-        div.appendChild(crearCarta(letra, index));
-    });
-
-    return div;
-}
-
-export { cargarCartas };
+export { cargarTablero };

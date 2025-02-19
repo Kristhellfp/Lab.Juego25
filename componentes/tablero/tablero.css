@@ -7,10 +7,9 @@
     align-items: center;
 }
 
-.div-Table {
-    
-    gap: 1rem;
+.cargar-tablero {
     display: grid;
+    gap: 1rem;
     margin-top: 120px;
     grid-template-columns: repeat(7, 7rem);
     grid-template-rows: repeat(3, 6.1rem);
@@ -18,21 +17,41 @@
     align-items: center;
 }
 
-.carta {
-    background-color: rgb(211, 189, 195);
-    font-size: 3rem;
-    height: 90px;
+.cada-carta {
     width: 90px;
-    border: 1px solid black;
-    border-radius: 3px;
+    height: 90px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.cada-carta .front,
+.cada-carta .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
+    font-size: 3rem;
+    border-radius: 3px;
 }
 
 
-.marcado{
-background-color: aquamarine;
-transition: 0.3s;
+.cada-carta .front {
+    background-color: rgb(212, 177, 206);
+    border: 2px solid rgb(182, 157, 188);
+}
+
+.cada-carta .back {
+    background-color: rgb(228, 122, 223);
+    border: 2px solid rgb(156, 139, 160);
+    transform: rotateY(180deg);
+}
+
+
+.cada-carta.flipped {
+    transform: rotateY(180deg);
 }
