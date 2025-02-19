@@ -1,3 +1,14 @@
+function headerC(){
+    let divheader = document.createElement("div");
+    divheader.className = "div-header";
+    divheader.appendChild(crearHeader()); 
+    return divheader;
+}
+export {headerC}
+
+
+
+
 function crearHeader() {
     let header = document.createElement("header");
     header.className = "header";

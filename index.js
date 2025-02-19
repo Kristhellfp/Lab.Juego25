@@ -1,40 +1,20 @@
-import { cargarCartas } from "./componentes/tablero/tablero.js";
-import { crearHeader } from "./componentes/header/header.js";
+import { cargarTablero } from "./componentes/tablero/tablero.js";
+import { headerC } from "./componentes/header/header.js";
+import { cargarProgreso } from "./componentes/progreso/progreso.js";
+import { footerC } from "./componentes/footer/footer.js";
 
+let DOM = document.querySelector("#root");
 
-
-    let DOM = document.querySelector("#root");
-
+function cargarDOM() {
     let contenedor = document.createElement("div");
     contenedor.className = "contenedor";
 
-    let divheader = document.createElement("div");
-    divheader.className = "div-header";
-    divheader.appendChild(crearHeader()); 
-    contenedor.appendChild(divheader);
-
-    let divprogreso = document.createElement("div");
-    divprogreso.className = "div-progreso";
-    contenedor.appendChild(divprogreso);
-
-    let divtablero = document.createElement("div");
-    divtablero.className = "div-tablero";
-    divtablero.appendChild(cargarCartas());
-    contenedor.appendChild(divtablero);
-
-    let divfooter = document.createElement("div");
-    divfooter.className = "div-footer";
-    contenedor.appendChild(divfooter);
+    contenedor.appendChild(headerC());
+    contenedor.appendChild(cargarProgreso());
+    contenedor.appendChild(cargarTablero());
+    contenedor.appendChild(footerC());
 
     DOM.appendChild(contenedor);
+}
 
-
-
-    let todas_las_cartas = document.querySelectorAll('.carta');
-    todas_las_cartas.forEach(cargarCartas =>{
-     cargarCartas.addEventListener("click",()=>{
-         cargarCartas.classList.add("marcado");
-
-
-    });
-});
+cargarDOM();
