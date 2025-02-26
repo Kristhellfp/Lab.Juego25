@@ -15,6 +15,7 @@ function cargarDOM() {
     contenedor.appendChild(footerC());
 
     DOM.appendChild(contenedor);
+    /*prueba */
 }
 
 cargarDOM();
